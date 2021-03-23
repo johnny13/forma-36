@@ -1,14 +1,13 @@
 import React from 'react';
+import type { ComponentType } from 'react';
 import cn from 'classnames';
-
-import { Icon } from '../Icon';
-import type { IconType } from '../Icon';
 import { TabFocusTrap } from '@contentful/f36-utils';
+
 import styles from './ToggleButton.css';
 
 export interface ToggleButtonProps {
   children: React.ReactNode;
-  icon?: IconType;
+  icon?: ComponentType;
   isActive?: boolean;
   onToggle?: Function;
   isDisabled?: boolean;
@@ -19,7 +18,7 @@ export interface ToggleButtonProps {
 export const ToggleButton = ({
   children,
   className,
-  icon,
+  icon: Icon,
   isActive = false,
   isDisabled = false,
   onToggle,
@@ -49,12 +48,8 @@ export const ToggleButton = ({
         aria-pressed={isActive}
       >
         <TabFocusTrap className={styles['Toggle__button__inner-wrapper']}>
-          {icon && (
-            <Icon
-              icon={icon}
-              color="secondary"
-              className={styles.Toggle__button__icon}
-            />
+          {Icon && (
+            <Icon className={styles.Toggle__button__icon} variant="secondary" />
           )}
           {children && (
             <span className={styles['Toggle__content-wrapper']}>

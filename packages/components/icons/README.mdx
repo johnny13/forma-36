@@ -1,0 +1,216 @@
+Icons are used to indicate actions, statuses and navigation. The icon components can be used in `Button`, `TextLink`, `Note` and other components.
+
+## Table of contents
+
+- [How to use icons](#how-to-use-icons)
+- [Component variations](#component-variations)
+- [Accessibility](#accessibility)
+
+## How to use icons
+
+- Select an icon that accurately represents the subject
+- Pair icons with text
+- Position buttons consistently in the interface
+- Ensure the behavior of the button is consistent in all use cases
+- Consider how the button fits into the context of the screen and reduce complexity where possible
+
+## Code examples
+
+### Icon components
+
+Forma 36 provides a list of built-in icons that can be used as regular React components:
+
+```tsx static=true
+import { ArrowDown } from '@contentful/f36-icons';
+
+<ArrowDown />;
+```
+
+### Third-party icon libraries
+
+Forma 36 also provides a stand-alone `Icon` component that can be used to wrap icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
+
+```tsx static=true
+import { Icon } from '@contentful/f36-icons';
+import { MdAccessAlarm } from 'react-icons/md';
+
+const AccessAlarm = (props) => {
+  return <Icon {...props} as={MdAccessAlarm} />;
+};
+```
+
+## Component variations
+
+The icon components can be configured in different ways using variations in color, size and icon type:
+
+### Icon variants
+
+```tsx static=true
+import { Calendar } from '@contentful/f36-icons';
+
+<React.Fragment>
+  <div>
+    <Calendar variant="primary" /> Primary
+  </div>
+  <div>
+    <Calendar variant="positive" /> Positive
+  </div>
+  <div>
+    <Calendar variant="negative" /> Negative
+  </div>
+  <div>
+    <Calendar variant="warning" /> Warning
+  </div>
+  <div>
+    <Calendar variant="secondary" /> Secondary
+  </div>
+  <div style={{ backgroundColor: '#8091a5' }}>
+    <Calendar variant="white" /> White
+  </div>
+```
+
+### Icon sizes
+
+```jsx
+<React.Fragment>
+  <div>
+    <Calendar size="tiny" /> Tiny size
+  </div>
+  <div>
+    <Calendar size="small" /> Small size
+  </div>
+  <div>
+    <Calendar size="large" /> Large size
+  </div>
+</React.Fragment>
+```
+
+### Icon type
+
+```jsx
+<React.Fragment>
+  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Icon icon="ArrowDown" />
+    <Icon icon="ArrowDownTrimmed" />
+    <Icon icon="ArrowUp" />
+    <Icon icon="ArrowUpTrimmed" />
+    <Icon icon="Asset" />
+    <Icon icon="AssetTrimmed" />
+    <Icon icon="ChatBubble" />
+    <Icon icon="ChatBubbleTrimmed" />
+    <Icon icon="CheckCircle" />
+    <Icon icon="CheckCircleTrimmed" />
+    <Icon icon="ChevronDown" />
+    <Icon icon="ChevronDownTrimmed" />
+    <Icon icon="ChevronLeft" />
+    <Icon icon="ChevronLeftTrimmed" />
+    <Icon icon="ChevronRight" />
+    <Icon icon="ChevronRightTrimmed" />
+    <Icon icon="ChevronUp" />
+    <Icon icon="ChevronUpTrimmed" />
+    <Icon icon="Clock" />
+    <Icon icon="ClockTrimmed" />
+    <Icon icon="Close" />
+    <Icon icon="CloseTrimmed" />
+    <Icon icon="Code" />
+    <Icon icon="CodeTrimmed" />
+    <Icon icon="Copy" />
+    <Icon icon="CopyTrimmed" />
+    <Icon icon="Download" />
+    <Icon icon="DownloadTrimmed" />
+    <Icon icon="Drag" />
+    <Icon icon="DragTrimmed" />
+    <Icon icon="Edit" />
+    <Icon icon="EditTrimmed" />
+    <Icon icon="EmbeddedEntryBlock" />
+    <Icon icon="EmbeddedEntryBlockTrimmed" />
+    <Icon icon="EmbeddedEntryInline" />
+    <Icon icon="EmbeddedEntryInlineTrimmed" />
+    <Icon icon="Entry" />
+    <Icon icon="EntryTrimmed" />
+    <Icon icon="Environment" />
+    <Icon icon="EnvironmentAlias" />
+    <Icon icon="ErrorCircle" />
+    <Icon icon="ErrorCircleTrimmed" />
+    <Icon icon="ExternalLink" />
+    <Icon icon="ExternalLinkTrimmed" />
+    <Icon icon="FaceHappy" />
+    <Icon icon="FaceHappyTrimmed" />
+    <Icon icon="Filter" />
+    <Icon icon="FilterTrimmed" />
+    <Icon icon="Folder" />
+    <Icon icon="FolderCreate" />
+    <Icon icon="FolderCreateTrimmed" />
+    <Icon icon="FolderOpen" />
+    <Icon icon="FolderOpenTrimmed" />
+    <Icon icon="FolderTrimmed" />
+    <Icon icon="FormatBold" />
+    <Icon icon="FormatBoldTrimmed" />
+    <Icon icon="FormatItalic" />
+    <Icon icon="FormatItalicTrimmed" />
+    <Icon icon="FormatUnderlined" />
+    <Icon icon="FormatUnderlinedTrimmed" />
+    <Icon icon="Heading" />
+    <Icon icon="HeadingOne" />
+    <Icon icon="HeadingOneTrimmed" />
+    <Icon icon="HeadingTrimmed" />
+    <Icon icon="HeadingTwo" />
+    <Icon icon="HeadingTwoTrimmed" />
+    <Icon icon="HelpCircle" />
+    <Icon icon="HelpCircleInverted" />
+    <Icon icon="HelpCircleTrimmed" />
+    <Icon icon="HorizontalRule" />
+    <Icon icon="HorizontalRuleTrimmed" />
+    <Icon icon="InfoCircle" />
+    <Icon icon="InfoCircleTrimmed" />
+    <Icon icon="Link" />
+    <Icon icon="LinkTrimmed" />
+    <Icon icon="ListBulleted" />
+    <Icon icon="ListBulletedTrimmed" />
+    <Icon icon="ListNumbered" />
+    <Icon icon="ListNumberedTrimmed" />
+    <Icon icon="Lock" />
+    <Icon icon="LockTrimmed" />
+    <Icon icon="LooksOne" />
+    <Icon icon="LooksOneTrimmed" />
+    <Icon icon="LooksTwo" />
+    <Icon icon="LooksTwoTrimmed" />
+    <Icon icon="Menu" />
+    <Icon icon="MenuTrimmed" />
+    <Icon icon="MoreHorizontal" />
+    <Icon icon="MoreHorizontalTrimmed" />
+    <Icon icon="MoreVertical" />
+    <Icon icon="MoreVerticalTrimmed" />
+    <Icon icon="Plus" />
+    <Icon icon="PlusCircle" />
+    <Icon icon="PlusCircleTrimmed" />
+    <Icon icon="PlusTrimmed" />
+    <Icon icon="Quote" />
+    <Icon icon="QuoteTrimmed" />
+    <Icon icon="Receipt" />
+    <Icon icon="ReceiptTrimmed" />
+    <Icon icon="Search" />
+    <Icon icon="SearchTrimmed" />
+    <Icon icon="Settings" />
+    <Icon icon="SettingsTrimmed" />
+    <Icon icon="ShoppingCart" />
+    <Icon icon="ShoppingCartTrimmed" />
+    <Icon icon="Star" />
+    <Icon icon="StarTrimmed" />
+    <Icon icon="Text" />
+    <Icon icon="TextTrimmed" />
+    <Icon icon="ThumbDown" />
+    <Icon icon="ThumbDownTrimmed" />
+    <Icon icon="ThumbUp" />
+    <Icon icon="ThumbUpTrimmed" />
+    <Icon icon="Users" />
+    <Icon icon="UsersTrimmed" />
+    <Icon icon="Warning" />
+    <Icon icon="WarningTrimmed" />
+  </div>
+</React.Fragment>
+```
+
+## Accessibility
+
+Missing

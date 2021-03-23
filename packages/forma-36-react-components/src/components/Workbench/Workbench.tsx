@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
+import { ChevronLeft } from '@contentful/f36-icons';
 
 import { Heading } from '../Typography';
 import { IconButton } from '../IconButton';
@@ -43,8 +44,8 @@ export function WorkbenchHeader({
             label="Back"
             buttonType="muted"
             iconProps={{
+              as: ChevronLeft,
               size: 'large',
-              icon: 'ChevronLeft',
             }}
           />
         </div>

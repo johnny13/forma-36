@@ -10,6 +10,7 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+// export * from '@contentful/f36-icons';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -29,7 +30,6 @@ export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/FormLabel';
 export * from './components/HelpText';
-export * from './components/Icon';
 export * from './components/IconButton';
 export * from './components/List';
 export * from './components/Modal';

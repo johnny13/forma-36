@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
+import { ChevronDownTrimmed } from '@contentful/f36-icons';
 
 import { Subheading } from '../../Typography';
-import { Icon } from '../../Icon';
 import styles from '../Accordion.css';
 
 export interface AccordionHeaderProps {
@@ -53,10 +53,9 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         className={classNames}
         onClick={handleClick}
       >
-        <Icon
-          icon="ChevronDownTrimmed"
-          color="secondary"
+        <ChevronDownTrimmed
           className={styles.AccordionHeader__icon}
+          variant="secondary"
         />
         {children}
       </button>

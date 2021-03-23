@@ -1,10 +1,10 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import { Download, Drag, Delete, Edit, Plus } from '@contentful/f36-icons';
+import { Badge } from '@contentful/f36-badge';
 
 import { Button, ButtonProps } from './Button';
 import { SectionHeading } from '../Typography';
-import { Badge } from '@contentful/f36-badge';
-import { iconName } from '../Icon/constants';
 
 export default {
   title: 'Components/Button',
@@ -278,22 +278,22 @@ export const Overview = (args: ButtonProps) => (
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
-          <Button buttonType="muted" icon="Download" aria-label="Download" />
+          <Button buttonType="muted" icon={Download} aria-label="Download" />
         </Flex>
         <Flex marginRight="spacingXs">
           <Button buttonType="muted" icon={args.icon} loading />
         </Flex>
         <Flex marginRight="spacingXs">
-          <Button buttonType="positive" icon="Drag" aria-label="Resize" />
+          <Button buttonType="positive" icon={Drag} aria-label="Resize" />
         </Flex>
         <Flex marginRight="spacingXs">
-          <Button buttonType="negative" icon="Delete" aria-label="Delete" />
+          <Button buttonType="negative" icon={Delete} aria-label="Delete" />
         </Flex>
         <Flex marginRight="spacingXs">
-          <Button buttonType="warning" icon="Edit" aria-label="Edit" />
+          <Button buttonType="warning" icon={Edit} aria-label="Edit" />
         </Flex>
         <Flex marginRight="spacingXs">
-          <Button buttonType="primary" icon="Plus" aria-label="Add" />
+          <Button buttonType="primary" icon={Plus} aria-label="Add" />
         </Flex>
       </Flex>
     </Flex>

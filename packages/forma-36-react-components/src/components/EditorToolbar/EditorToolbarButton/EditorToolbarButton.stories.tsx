@@ -3,7 +3,6 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { EditorToolbarButton } from './EditorToolbarButton';
 import type { EditorToolbarButtonProps } from './EditorToolbarButton';
-import { iconName } from './../../Icon/constants';
 
 export default {
   argTypes: {

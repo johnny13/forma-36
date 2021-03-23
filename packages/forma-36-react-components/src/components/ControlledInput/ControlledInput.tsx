@@ -9,8 +9,8 @@ import React, {
   useEffect,
 } from 'react';
 import cn from 'classnames';
+import { Done, Minus, IconProps } from '@contentful/f36-icons';
 
-import { Icon } from '../Icon';
 import styles from './ControlledInput.css';
 
 export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
@@ -78,6 +78,11 @@ export const ControlledInput = ({
     inputRef.current.indeterminate = indeterminate;
   }, [indeterminate]);
 
+  const iconProps: Partial<IconProps> = {
+    size: 'medium',
+    variant: disabled ? 'secondary' : 'white',
+  };
+
   return (
     <div className={wrapperClassname}>
       <input
@@ -121,11 +126,7 @@ export const ControlledInput = ({
           className={cn(styles['Input__ghost'], styles['Checkbox__ghost'])}
           htmlFor={id}
         >
-          <Icon
-            icon={indeterminate ? 'Minus' : 'Done'}
-            color={disabled ? 'secondary' : 'white'}
-            size="medium"
-          />
+          {indeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
         </label>
       )}
     </div>

@@ -1,7 +1,9 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import type {
+  ComponentType,
   CSSProperties,
   FocusEvent,
+  HTMLProps,
   MouseEvent as ReactMouseEvent,
   FocusEventHandler,
   MouseEventHandler,
@@ -9,9 +11,9 @@ import type {
 } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-
-import { Icon, IconType } from '../Icon';
 import { TabFocusTrap } from '@contentful/f36-utils';
+import { ChevronDown, Icon } from '@contentful/f36-icons';
+
 import { Spinner } from '../Spinner';
 import styles from './Button.css';
 
@@ -28,7 +30,7 @@ type AnchorProps =
     };
 
 export type ButtonProps = {
-  icon?: IconType;
+  icon?: ComponentType;
   indicateDropdown?: boolean;
   onClick?: MouseEventHandler;
   isFullWidth?: boolean;
@@ -119,8 +121,8 @@ export const Button = ({
           <Icon
             className={styles.Button__icon}
             size={size === 'small' ? 'tiny' : 'small'}
-            icon={icon}
-            color={iconColor}
+            as={icon}
+            variant={iconColor}
           />
         )}
         {children && <span className={styles.Button__label}>{children}</span>}
@@ -149,10 +151,9 @@ export const Button = ({
           />
         </CSSTransition>
         {indicateDropdown && (
-          <Icon
+          <ChevronDown
             className={styles['Button__dropdown-icon']}
-            icon="ChevronDown"
-            color={iconColor}
+            variant={iconColor}
           />
         )}
       </TabFocusTrap>

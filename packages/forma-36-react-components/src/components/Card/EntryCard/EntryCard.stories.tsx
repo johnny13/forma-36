@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import { Clock } from '@contentful/f36-icons';
 
 import { EntryCard, EntryCardProps } from './EntryCard';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
@@ -39,7 +40,7 @@ export const Basic = (args: EntryCardProps) => <EntryCard {...args} />;
 
 Basic.args = {
   size: 'default',
-  statusIcon: 'Clock',
+  statusIcon: Clock,
   title: 'Closer',
   description:
     'Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',
@@ -170,7 +171,7 @@ export const Overview = () => (
       title="Closer"
       description="Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',"
       status="published"
-      statusIcon="Clock"
+      statusIcon={Clock}
       contentType="Album"
       dropdownListElements={dropdownElements}
     />

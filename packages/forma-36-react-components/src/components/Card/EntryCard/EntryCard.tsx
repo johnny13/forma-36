@@ -3,16 +3,15 @@ import cn from 'classnames';
 import truncate from 'truncate';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import type { EntityStatus, PickUnion } from '@contentful/f36-core';
+import { Icon } from '@contentful/f36-icons';
 
 import { Card, BaseCardProps, CardProps } from '../Card';
 import { CardActions } from '../CardActions/CardActions';
-
 import { EntryCardSkeleton } from './EntryCardSkeleton';
 import {
   CardDragHandle,
   CardDragHandleProps,
 } from '../CardDragHandle/CardDragHandle';
-import { Icon, IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
 type EntryCardStatus = PickUnion<
@@ -42,7 +41,7 @@ export interface EntryCardProps extends BaseCardProps {
   /**
    * An icon for the status of the entry
    */
-  statusIcon?: React.ReactNode;
+  statusIcon?: typeof Icon;
   /**
    * The thumbnail of the entry
    */
@@ -207,15 +206,7 @@ export function EntryCard({
                 >
                   {contentType}
                 </div>
-                {statusIcon && typeof statusIcon === 'string' ? (
-                  <Icon
-                    icon={statusIcon as IconType}
-                    color="muted"
-                    className={styles['EntryCard__icon']}
-                  />
-                ) : (
-                  statusIcon
-                )}
+                {statusIcon}
                 {status && renderStatus(status)}
                 {dropdownListElements && (
                   <CardActions
